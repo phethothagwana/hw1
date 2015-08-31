@@ -148,7 +148,7 @@ int shell (int argc, char *argv[]) {
 if(fundex >= 0) cmd_table[fundex].fun(&t[1]);
     else {
 
-      // system(t[0]);
+     // system(t[0]);
        fprintf(stdout, "This shell only supports built-ins. Replace this to run programs as commands.\n");
       // pid_t childpid = fork();
 
