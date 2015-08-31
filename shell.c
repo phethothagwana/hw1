@@ -23,7 +23,6 @@ int cmd_quit(tok_t arg[]) {
 }
 
 int cmd_help(tok_t arg[]);
-
 int cmd_change_directory(tok_t arg[]);
 
 /* Command Lookup table */
@@ -117,13 +116,6 @@ void add_process(process* p)
  */
 process* create_process(char* inputString)
 {
-	pid_t tcpid;
-	pid_t pid = getpid();
-	
-	fprintf("Parent pid:%d", pid);
-	pid_t cpid;
-	pid_t mypid;
-  
   /** YOUR CODE HERE */
   return NULL;
 }
@@ -155,39 +147,13 @@ int shell (int argc, char *argv[]) {
 	    
 if(fundex >= 0) cmd_table[fundex].fun(&t[1]);
     else {
-int tim;
-      
-      pid = fork();
-      
-      if(pid == 0){
-	
-	//cpid = getpid();
-	execvp(*t, t);
-        perror(*t);
-	//sleep(1);
-	exit(0);
-	
-	//printf("%d", cpid);
-      
-      } else if (pid < 0){
-	
-	printf("Fork Process Failed");
-	exit(EXIT_FAILURE);
-      }
-     else
-       	{
-        	while((pid != wait(&tim))); 
-       
-	 }
 
-      //system(t[0]);
-      // fprintf(stdout, "This shell only supports built-ins. Replace this to run programs as commands.\n");
+      // system(t[0]);
+       fprintf(stdout, "This shell only supports built-ins. Replace this to run programs as commands.\n");
       // pid_t childpid = fork();
 
     }
-    //wait(NULL);
-
-        cwd= getcwd(buff,INPUT_STRING_SIZE);    
+	cwd= getcwd(buff,INPUT_STRING_SIZE);    
 	fprintf(stdout, "%d %s: ", ++lineNum,cwd);
   }
   return 0;
